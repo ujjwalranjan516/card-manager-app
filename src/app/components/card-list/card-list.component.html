@@ -1,0 +1,96 @@
+<div class="card-list-container">
+  <div class="header">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+    <h1>Card Manager by Ujjwal Ranjan</h1>
+    <div class="actions">
+      <button
+        mat-raised-button
+        color="primary"
+        (click)="onAddCard()"
+        class="add-button">
+        <mat-icon>add</mat-icon>
+        Add New Card
+      </button>
+      <button
+        mat-button
+        color="accent"
+        (click)="onRefresh()"
+        class="refresh-button">
+        <mat-icon>refresh</mat-icon>
+        Refresh
+      </button>
+    </div>
+  </div>
+
+    <br/>
+    <p>
+    Hello! I'm Ujjwal Ranjan, a passionate Computer Science graduate.Passionate Computer Science graduate specializing in backend development and AI solutions.
+    Strong problem-solver with hands-on experience in building efficient systems and data-driven applications.
+    </p>
+    <br/>
+    <p>
+    Thank you ! Emplay Inc team for reviewing my project and providing this opportunity!
+    </p>
+    <br/>
+
+  <div class="cards-grid" *ngIf="cards.length > 0; else noCards">
+    <mat-card *ngFor="let card of cards" class="card-item">
+      <mat-card-header>
+        <mat-card-title>{{ card.title }}</mat-card-title>
+      </mat-card-header>
+
+      <mat-card-content>
+        <p class="card-description">{{ card.description }}</p>
+      </mat-card-content>
+
+      <mat-card-actions align="end">
+        <button
+          mat-button
+          color="primary"
+          (click)="onEditCard(card)"
+          class="edit-button">
+          <mat-icon>edit</mat-icon>
+          Edit
+        </button>
+        <button
+          mat-button
+          color="warn"
+          (click)="onDeleteCard(card.id)"
+          class="delete-button">
+          <mat-icon>delete</mat-icon>
+          Delete
+        </button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+
+  <ng-template #noCards>
+    <div class="no-cards">
+      <mat-icon class="no-cards-icon">inbox</mat-icon>
+      <h3>No cards available</h3>
+      <p>Click "Add New Card" to create your first card.</p>
+    </div>
+  </ng-template>
+  <!-- Contact Information Section -->
+
+  <div class="contact-section">
+    <h3 class="contact-title">Let's Connect</h3>
+    <div class="contact-info">
+      <div class="contact-item">
+        <mat-icon>phone</mat-icon>
+        <span>+91-9113497883</span>
+      </div>
+      <div class="contact-item">
+        <mat-icon>email</mat-icon>
+        <span>ujjwalranjan516gmail.com</span>
+      </div>
+      <div class="contact-item">
+        <mat-icon>link</mat-icon>
+        <a href="https://linkedin.com/in/ujjwal-ranjan-" target="_blank" class="linkedin-link">linkedin.com/in/ujjwal-ranjan-</a>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
